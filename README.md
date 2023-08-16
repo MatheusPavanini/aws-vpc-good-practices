@@ -58,14 +58,15 @@ Unlike security groups, NACL gives you the option to create allow and deny rules
 By default, a VPC has a default NACL that allows all inbound and outbound traffic. A custom NACL, when you create one, does the opposite. Each subnet can only be associated with one NACL, but an NACL can be attached to multiple subnets. Be careful with subnets that aren't associated with an NACL as they will automatically inherit your default NACL (allowing all ingress and egress traffic).
 
 Implementation:
-Created some security groups for port 22 in order to be able to reach worker nodes via ssh 
+Created an NACL for ports 443 and 80 for external requests
 
 7. Use VPC Flow Logs to Monitor IP Traffic ✔ 
 Given that your VPC is your packet gateway, we'd recommend using VPC Flow Logs to capture information about the IP traffic that's going to and from network interfaces in your VPC (or subnet).
 
 VPC Flow Logs are a great way to monitor traffic that reaches your instance, but they're also great for diagnosing common problems, e.g. overly prohibitive security group rules preventing traffic. Don't forget to publish flow log data to CloudWatch and/or S3.
+
 Implementation:
-Created an NACL for ports 443 and 80 for external requests
+Created a s3 bucket for all logs from my VPC
 
 8. Use an Elastic IP For External Communication
 When a service needs to be able to communicate externally, be sure to associate it with AWS Elastic IP (EIP). An EIP allows you to quickly remap addresses to different instances - should you need to, you can use them to mask the failure of some software or an instance. EIPs are also great for when you need a consistent IP, e.g. for DNS.
