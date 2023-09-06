@@ -79,7 +79,7 @@ Whenever you're using Elastic Load Balancing (ELB) for web applications, make su
 N/A 10. Use AWS SFTP
 If you ever need to transfer files/objects into a VPC, we'd recommend using AWS SFTP. When you do this, you utilize VPC endpoints, avoiding public IP addresses (and the internet) altogether. You also get to leverage AWS PrivateLink.
 
-X 11. Set Up VPC Peering
+❌ 11. Set Up VPC Peering
 VPC Peering allows you to route traffic between two AWS VPCs, via private IPs.
 
 Importantly, VPC Peering connections don't depend on physical hardware like a gateway or VPN connection. Instead, peering connections are created using utilize the VPC's existing infrastructure. This can be especially useful if you have applications that require private & secure connections across multiple VPCs or accounts, or even a supplier's infrastructure.
