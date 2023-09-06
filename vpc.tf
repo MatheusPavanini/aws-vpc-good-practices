@@ -1,4 +1,4 @@
-module "vpc" {
+module "vpc"  {
   source = "terraform-aws-modules/vpc/aws"
 
   name = "eks-vpc"
@@ -12,8 +12,11 @@ module "vpc" {
   #enable_vpn_gateway = true
 
   tags = {
-    Terraform = "true"
-    Environment = "dev"
-    Usage = "Kubernetes"
-  }
+			Terraform = "true"
+			Environment = "dev"
+			Usage = "Kubernetes"
+			Version = "1.0"
+			Project = "vpc-good-pratices"
+			CreatedAt = formatdate("YYYY-MM-DD", timestamp())
+	}
 }
