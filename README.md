@@ -1,4 +1,4 @@
-# aws-vpc-good-pratices
+# aws-vpc-good-practices
 The objective of this project is to demonstrate the 13 best practices for VPCs according to HyperGlance (https://www.hyperglance.com/blog/aws-vpc-security-best-practices/) 
 
 ✔  1. Choose the Appropriate VPC Type 
